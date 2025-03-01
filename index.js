@@ -32,7 +32,7 @@ const connect = async () => {
 };
 
 app.use(express.json());
-app.use(cors({ origin: 'http://localhost:3000',"https://tour-frontend-three.vercel.app", credentials: true })); // Specific CORS
+app.use(cors({ origin: ['http://localhost:3000','https://tour-frontend-three.vercel.app'], credentials: true })); // Specific CORS
 app.use(cookieParser());
 app.use('/tour-images', express.static(path.join(__dirname, 'public/tour-images')));
 app.get('/', (req, res) => {
